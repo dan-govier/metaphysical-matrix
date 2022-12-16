@@ -1,149 +1,22 @@
-.container {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". mind body spirit"
-    "choice fool fool fool"
-    "greatWay chariot temperance world"
-    "transformation lovers death judgement"
-    "significator hierophant hangedMan sun"
-    "experience emperor fortitude moon"
-    "catalyst empress wheel star"
-    "potentiator highPriestess hermit tower"
-    "matrix magician justice devil";
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
 }
 
-.mind {
-  grid-area: mind;
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 30%;
+  max-width: 30%;
+  padding: 0 4px;
 }
 
-.body {
-  grid-area: body;
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
 
-.spirit {
-  grid-area: spirit;
-}
-
-.choice {
-  grid-area: choice;
-}
-
-.fool {
-  grid-area: fool;
-}
-
-.greatWay {
-  grid-area: greatWay;
-}
-
-.chariot {
-  grid-area: chariot;
-}
-
-.temperance {
-  grid-area: temperance;
-}
-
-.world {
-  grid-area: world;
-}
-
-.transformation {
-  grid-area: transformation;
-}
-
-.lovers {
-  grid-area: lovers;
-}
-
-.death {
-  grid-area: death;
-}
-
-.judgement {
-  grid-area: judgement;
-}
-
-.significator {
-  grid-area: significator;
-}
-
-.hierophant {
-  grid-area: hierophant;
-}
-
-.hangedMan {
-  grid-area: hangedMan;
-}
-
-.sun {
-  grid-area: sun;
-}
-
-.experience {
-  grid-area: experience;
-}
-
-.emperor {
-  grid-area: emperor;
-}
-
-.moon {
-  grid-area: moon;
-}
-
-.catalyst {
-  grid-area: catalyst;
-}
-
-.empress {
-  grid-area: empress;
-}
-
-.wheel {
-  grid-area: wheel;
-}
-
-.star {
-  grid-area: star;
-}
-
-.potentiator {
-  grid-area: potentiator;
-}
-
-.highPriestess {
-  grid-area: highPriestess;
-}
-
-.hermit {
-  grid-area: hermit;
-}
-
-.tower {
-  grid-area: tower;
-}
-
-.matrix {
-  grid-area: matrix;
-}
-
-.magician {
-  grid-area: magician;
-}
-
-.fortitude {
-  grid-area: fortitude;
-}
-
-.justice {
-  grid-area: justice;
-}
-
-.devil {
-  grid-area: devil;
+#choice {
+  width: 30%;
 }
