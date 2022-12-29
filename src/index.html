@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metaphysical Matrix, the Tarot as Logos projection</title>
     <link rel="stylesheet" href="../dist/style_rendered.css" />
-    <script src="script.ts"></script>
+    <script src="script.js"></script>
   </head>
 
+  <!-- All tarot descriptions come from reddit user u/fuckAristotle (currently awaiting permission to use) -->
   <!--
   Main Goal
   The goal of this project is to provide a spreadsheet-style matrix interface that displays the tarot cards in breakups of mind,
@@ -33,46 +34,170 @@ TODO: create IDs for each card
 TODO: create collection for the cards and their information
 -->
 
-  <body>
-  
-    <div class="grid grid-cols-8 grid-rows-3 grid-flow-dense">
-      <div>
-        <div><img src="../images/1.png" />1</div>
-        <div><img src="../images/8.png" />8</div>
-        <div><img src="../images/15.png" />15</div>
+
+<!-- Modal -->
+<input type="checkbox" id="description_modal" class="modal-toggle" />
+<label for="description_modal" class="modal cursor-pointer">
+  <label class="modal-box relative" for="">
+    <h3 class="text-lg font-bold" id="modalName">Name</h3>
+    <p class="py-4" id="modalDescription">Description of Tarot card as best as we can come up with. It
+      will be a few sentences ideally, but one can see it sometimes spilling over
+      into a longer string of sentences, occasionally one might even see it as 
+      an entire paragraph, but that's a sort of subjective distinction. A 
+      paragraph can be just a single sentence if it's separated out distinct 
+      from any surrounding sentences.
+    </p>
+  </label>
+</label>
+<!-- End Modal -->
+
+  <body class="p-2 bg-neutral" id="container" onLoad="initialize()">
+    <div class="rounded-md border bg-base-100 border-black p-2 mb-16">
+      <div class=" grid grid-cols-8 grid-flow-dense p-2">
+        <div>
+          <div>
+            <label for="description_modal" onclick="displayTarotModal(1);" id="1">
+              <img class="p-2" src="../images/1.png" />
+            </label>
+          </div>
+          <div>
+            <label for="description_modal" onclick="displayTarotModal(8);" id="1">
+              <img class="p-2" src="../images/8.png" />
+            </label>
+          </div>
+          <div>
+            <label for="description_modal" onclick="displayTarotModal(15);" id="1">
+              <img class="" src="../images/15.png" />
+            </label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <label for="description_modal" onclick="displayTarotModal(2);" id="1">
+              <img class="p-2" src="../images/2.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(9);" id="1">
+            <img class="p-2" src="../images/9.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(16);" id="1">
+            <img class="p-2" src="../images/16.png" />
+          </label>
+        </div>
       </div>
       <div>
-        <div><img src="../images/2.png" />2</div>
-        <div><img src="../images/9.png" />9</div>
-        <div><img src="../images/16.png" />16</div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(3);" id="1">
+            <img class="p-2" src="../images/3.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(10);" id="1">
+            <img class="p-2" src="../images/10.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(17);" id="1">
+            <img class="p-2" src="../images/17.png" />
+          </label>
+        </div>
       </div>
       <div>
-        <div><img src="../images/3.png" />3</div>
-        <div><img src="../images/10.png" />10</div>
-        <div><img src="../images/17.png" />17</div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(4);" id="1">
+            <img class="p-2" src="../images/4.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(11);" id="1">
+            <img class="p-2" src="../images/11.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(18);" id="1">
+            <img class="p-2" src="../images/18.png" />
+          </label>
+        </div>
       </div>
       <div>
-        <div><img src="../images/4.png" />4</div>
-        <div><img src="../images/11.png" />11</div>
-        <div><img src="../images/18.png" />18</div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(5);" id="1">
+            <img class="p-2" src="../images/5.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(12);" id="1">
+            <img class="p-2" src="../images/12.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(19);" id="1">
+            <img class="p-2" src="../images/19.png" />
+          </label>
+        </div>
       </div>
       <div>
-        <div><img src="../images/5.png" />5</div>
-        <div><img src="../images/12.png" />12</div>
-        <div><img src="../images/19.png" />19</div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(6);" id="1">
+            <img class="p-2" src="../images/6.png" />
+        </label>
+      </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(13);" id="1">
+            <img class="p-2" src="../images/13.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(20);" id="1">
+            <img class="p-2" src="../images/20.png" />
+          </label>
+        </div>
       </div>
       <div>
-        <div><img src="../images/6.png" />6</div>
-        <div><img src="../images/13.png" />13</div>
-        <div><img src="../images/20.png" />20</div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(7);" id="1">
+            <img class="p-2" src="../images/7.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(14);" id="1">
+            <img class="p-2" src="../images/14.png" />
+          </label>
+        </div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(21);" id="1">
+            <img class="p-2" src="../images/21.png" />
+          </label>
+        </div>
       </div>
       <div>
-        <div><img src="../images/7.png" />7</div>
-        <div><img src="../images/14.png" />14</div>
-        <div><img src="../images/21.png" />21</div>
+        <div class="col-span-1"></div>
+        <div>
+          <label for="description_modal" onclick="displayTarotModal(22);" id="1">
+            <img class="p-2" src="../images/22.png" />
+          </label>
+        </div>
       </div>
-      <div><img src="../images/22.png" />22</div>
+      
+    
+      <div class="btm-nav p-4 rounded-md border border-black">
+        <button class="text-info">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+        </button>
+        <button class="text-info active">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        </button>
+        <button class="text-info">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+        </button>
+      </div>
     </div>
+
+    
+
     
   </body>
 </html>
